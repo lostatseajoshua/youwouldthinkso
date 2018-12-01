@@ -1,6 +1,6 @@
 //
-//  Collection+Extension.swift
-//  ywts
+//  Array+Extension.swift
+//  YWTSArrayExtensions
 //
 //  Created by Joshua Alvarado on 11/29/18.
 //
