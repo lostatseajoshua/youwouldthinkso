@@ -12,7 +12,20 @@ final class ywtsTests: XCTestCase {
         XCTAssertEqual(dictionary1["1"], 1)
     }
 
+    func testSafeCollectionAccess() {
+        let array = [1, 2, 3]
+        XCTAssertEqual(array[try: 0], 1)
+        XCTAssertEqual(array[safe: 0], 1)
+        XCTAssertEqual(array[at: 0], 1)
+        XCTAssertEqual(array.element(at: 0), 1)
+        XCTAssertNil(array[try: 100])
+        XCTAssertNil(array[safe: 100])
+        XCTAssertNil(array[at: 100])
+        XCTAssertNil(array.element(at: 100))
+    }
+
     static var allTests = [
         ("testKeyValueReduce", testKeyValueReduce),
+        ("testSafeCollectionAccess", testSafeCollectionAccess),
     ]
 }
