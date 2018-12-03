@@ -13,6 +13,9 @@ let package = Package(
         .library(
             name: "YWTSArrayExtensions",
             targets: ["YWTSArrayExtensions"]),
+        .library(
+            name: "YWTSCollectionExtensions",
+            targets: ["YWTSCollectionExtensions"]),
         ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -23,12 +26,10 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "ywts",
-            dependencies: ["YWTSArrayExtensions"],
-            path: "Sources/ywts"),
+            dependencies: ["YWTSArrayExtensions", "YWTSCollectionExtensions"]),
         .target(
-            name: "YWTSArrayExtensions",
-            dependencies: [],
-            path: "Sources/YWTSArrayExtensions"),
+            name: "YWTSArrayExtensions"),
+        .target(name: "YWTSCollectionExtensions"),
         .testTarget(
             name: "ywtsTests",
             dependencies: ["ywts"]),
